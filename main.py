@@ -11,6 +11,7 @@ num2_started = False
 window = Tk()
 window.title("Calculator")
 window.geometry("505x505")
+window.resizable(width=False, height=False)
 
 
 # Creates canvas where our calculator items will sit
