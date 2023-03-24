@@ -15,6 +15,12 @@ LIME_GREEN = "#85FF00"
 BLACK = "black"
 ORANGE = "orange"
 
+# Font Constants
+DECIMAL_FONT = ("Helvetica", 24)
+COMMON_BUTTON_FONT = ("Helvetica", 18)
+BLACK_BUTTON_FONT = ("Helvetica", 14)
+LARGE_BUTTON_FONT = ("Helvetica", 36)
+
 # Creates window
 window = Tk()
 window.title("Calculator")
@@ -165,87 +171,87 @@ def equals_function():
 
 
 # Number Label on top
-number_label = Label(bg="white", fg="black", text="0", font=("Helvetica", 36), borderwidth=3, relief="solid",
+number_label = Label(bg="white", fg="black", text="0", font=LARGE_BUTTON_FONT, borderwidth=3, relief="solid",
                      anchor="e")
 number_label.place(in_=canvas, width=430, height=80, relx=0.08, rely=0.09)
 
 # Clear/Back Buttons
-clear_button = Button(bg=BLACK, fg="white", text="Clear", font=("Helvetica", 14), borderwidth=3, relief="solid",
+clear_button = Button(bg=BLACK, fg="white", text="Clear", font=BLACK_BUTTON_FONT, borderwidth=3, relief="solid",
                       command=clear_function)
 clear_button.place(in_=canvas, width=60, height=60, relx=0.8, rely=0.35)
 
-back_button = Button(bg=BLACK, fg="white", text="Back", font=("Helvetica", 14), borderwidth=3, relief="solid",
+back_button = Button(bg=BLACK, fg="white", text="Back", font=BLACK_BUTTON_FONT, borderwidth=3, relief="solid",
                      command=back_function)
 back_button.place(in_=canvas, width=60, height=60, relx=0.8, rely=0.5)
 
 # Mathematical Symbols Buttons
-pos_neg_button = Button(text="+/-", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=LIME_GREEN,
+pos_neg_button = Button(text="+/-", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=LIME_GREEN,
                         command=lambda variable="-0", action=change_polarity: logic_gate(variable, action))
 pos_neg_button.place(in_=canvas, width=60, height=60, relx=.08, rely=.8)
 
-decimal_button = Button(text=".", font=("Helvetica", 24), borderwidth=3, relief="solid", bg=LIME_GREEN,
+decimal_button = Button(text=".", font=DECIMAL_FONT, borderwidth=3, relief="solid", bg=LIME_GREEN,
                         command=lambda variable="0.", action=put_decimal: logic_gate(variable, action))
 decimal_button.place(in_=canvas, width=60, height=60, relx=0.42, rely=0.8)
 
 # Operations Buttons
-add_button = Button(text="+", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=RED,
+add_button = Button(text="+", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=RED,
                     command=lambda string_operator="+": operation_function(string_operator))
 add_button.place(in_=canvas, width=60, height=60, relx=0.6, rely=0.8)
 
-subtract_button = Button(text="-", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=RED,
+subtract_button = Button(text="-", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=RED,
                          command=lambda string_operator="-": operation_function(string_operator))
 subtract_button.place(in_=canvas, width=60, height=60, relx=0.6, rely=0.65)
 
-multiply_button = Button(text="x", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=RED,
+multiply_button = Button(text="x", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=RED,
                          command=lambda string_operator="x": operation_function(string_operator))
 multiply_button.place(in_=canvas, width=60, height=60, relx=0.6, rely=0.5)
 
-division_button = Button(text="/", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=RED,
+division_button = Button(text="/", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=RED,
                          command=lambda string_operator="/": operation_function(string_operator))
 division_button.place(in_=canvas, width=60, height=60, relx=0.6, rely=0.35)
 
-equals_button = Button(text="=", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=ORANGE,
+equals_button = Button(text="=", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=ORANGE,
                        command=equals_function)
 equals_button.place(in_=canvas, width=60, height=140, relx=0.8, rely=0.65)
 
 # Numbers Buttons
-zero_button = Button(text="0", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=BLUE,
+zero_button = Button(text="0", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=BLUE,
                      command=lambda variable="0", action=number_to_put: logic_gate(variable, action))
 zero_button.place(in_=canvas, width=60, height=60, relx=0.25, rely=0.8)
 
-one_button = Button(text="1", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=BLUE,
+one_button = Button(text="1", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=BLUE,
                     command=lambda variable="1", action=number_to_put: logic_gate(variable, action))
 one_button.place(in_=canvas, width=60, height=60, relx=0.08, rely=0.65)
 
-two_button = Button(text="2", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=BLUE,
+two_button = Button(text="2", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=BLUE,
                     command=lambda variable="2", action=number_to_put: logic_gate(variable, action))
 two_button.place(in_=canvas, width=60, height=60, relx=0.25, rely=0.65)
 
-three_button = Button(text="3", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=BLUE,
+three_button = Button(text="3", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=BLUE,
                       command=lambda variable="3", action=number_to_put: logic_gate(variable, action))
 three_button.place(in_=canvas, width=60, height=60, relx=0.42, rely=0.65)
 
-four_button = Button(text="4", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=BLUE,
+four_button = Button(text="4", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=BLUE,
                      command=lambda variable="4", action=number_to_put: logic_gate(variable, action))
 four_button.place(in_=canvas, width=60, height=60, relx=0.08, rely=0.5)
 
-five_button = Button(text="5", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=BLUE,
+five_button = Button(text="5", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=BLUE,
                      command=lambda variable="5", action=number_to_put: logic_gate(variable, action))
 five_button.place(in_=canvas, width=60, height=60, relx=0.25, rely=0.5)
 
-six_button = Button(text="6", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=BLUE,
+six_button = Button(text="6", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=BLUE,
                     command=lambda variable="6", action=number_to_put: logic_gate(variable, action))
 six_button.place(in_=canvas, width=60, height=60, relx=0.42, rely=0.5)
 
-seven_button = Button(text="7", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=BLUE,
+seven_button = Button(text="7", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=BLUE,
                       command=lambda variable="7", action=number_to_put: logic_gate(variable, action))
 seven_button.place(in_=canvas, width=60, height=60, relx=0.08, rely=0.35)
 
-eight_button = Button(text="8", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=BLUE,
+eight_button = Button(text="8", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=BLUE,
                       command=lambda variable="8", action=number_to_put: logic_gate(variable, action))
 eight_button.place(in_=canvas, width=60, height=60, relx=0.25, rely=0.35)
 
-nine_button = Button(text="9", font=("Helvetica", 18), borderwidth=3, relief="solid", bg=BLUE,
+nine_button = Button(text="9", font=COMMON_BUTTON_FONT, borderwidth=3, relief="solid", bg=BLUE,
                      command=lambda variable="9", action=number_to_put: logic_gate(variable, action))
 nine_button.place(in_=canvas, width=60, height=60, relx=0.42, rely=0.35)
 
