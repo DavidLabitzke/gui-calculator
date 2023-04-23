@@ -47,7 +47,7 @@ def clear_function():
 def back_function():
     """Erases the last number on screen. If it's a single digit number, it gets replaced with a 0"""
     new_number = number_label["text"][:-1]
-    if new_number == "":
+    if new_number == "" or new_number == "-":
         new_number = "0"
     number_label["text"] = add_comma(new_number)
 
