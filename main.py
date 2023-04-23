@@ -84,9 +84,7 @@ def number_to_put(string_number):
 
 def put_decimal():
     """Places a decimal point if possible"""
-    if "." in number_label["text"]:
-        pass
-    else:
+    if "." not in number_label["text"]:
         stripped_number = number_label["text"].replace(',', "")
         float_number = float(stripped_number)
         new_number = str(float_number)[:-1]
